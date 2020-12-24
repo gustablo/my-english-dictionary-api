@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Word {
+  id        Int    @id @default(autoincrement())
+  word      String @unique
+  means     String
+  translate String
+}
+
+model Test {
+  id Int @id @default(autoincrement())
+}
+
+model Test2 {
+  id Int @id @default(autoincrement())
+}
